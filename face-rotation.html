@@ -1,0 +1,63 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <title>tests</title>
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+        <style type="text/css" media="screen">
+            #face { display: block; width: 356px; height: 400px; margin: 100px auto;}    
+        </style>
+    </head>
+    <body>
+        <img id="face" src="face-follower/0.jpg" alt="face">
+        <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+        
+        <script type="text/javascript">
+
+           $(document).ready(function()
+            {
+                    
+                    var element = $('#face');
+                    var top = element.offset().top + element.height()/2;
+                    var left = element.offset().left + element.width()/2;
+
+                    
+                    var a = 0
+                    , b = 0 
+                    , c = 0;
+                    $('body').mousemove(function()
+                    {
+                        var x=Math.floor(event.clientX - left);
+                        var y=Math.floor(event.clientY - top);
+                        if(x > 0)
+                            a = 1;
+                        else if(x < 0)
+                            a = 0;
+                        if(y > 0)
+                            b = 0;
+                        else if(y < 0)
+                            b = 1;
+                        if(Math.abs(x) > Math.abs(y))
+                        {
+                            c = 2;
+                            if(Math.abs(x)>Math.abs(y)*2.4)
+                                c = 3;
+
+                        }
+                        else if(Math.abs(y) > Math.abs(x))
+                        {
+                            c = 1;
+                            if (Math.abs(y)>Math.abs(x)*2.4)
+                                c = 0;
+                        }
+                        element.attr('src','face-follower/'+a+b+c+'.jpg');
+                        console.log(a);
+                    });
+                    
+            });
+
+        </script>
+    </body>
+</html>
+
