@@ -1,8 +1,10 @@
-alihaghighatkhah
+Face Tracer
 ================
 
-CREATED BY ALI HAGHIGHATKHAH
-ALIHAGHIGHATKHAH@YAHOO.COM
-WWW.COLOROFWEB.COM
+This is a simple Jquery function that selects image source accourding to mouse position in  a parent element.
+I've used it to change face images and make an animation that the face looks to pointer at all time. but it can be changed with any creative ideas.
 
-THIS SAMPLE SHOWS HOW TO SIMPLY CHANGE IMAGE BASED ON MOUSE POSITION.
+1 - you need 16 images for 360/16 degrees range.
+2 - select in which parent element (e.g. body) the pointer would be traced
+
+I'll work to make it dynamic in number of images as soon as I have time
